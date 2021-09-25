@@ -10,7 +10,6 @@ defaults:
 
 orbs:
   vfcommon: voiceflow/common@0.0.187
-  sonarcloud: sonarsource/sonarcloud@1.0.2
 
 jobs:
   build-and-test:
@@ -24,7 +23,6 @@ jobs:
       - vfcommon/build
       - vfcommon/unit_tests
       - vfcommon/integration_tests
-      - sonarcloud/scan
 
 workflows:
 
