@@ -1,47 +1,78 @@
 {
   "name": "composite-reducer",
-  "version": "0.0.2",
   "description": "combine reducers based on individual properties",
-  "main": "build/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf build",
-    "build": "yarn clean && ttsc --project ./tsconfig.build.json --declaration"
+  "version": "0.0.2",
+  "author": "Tyler Han, Ben Teichman",
+  "bugs": {
+    "url": "https://github.com/voiceflow/composite-reducer/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/voiceflow/composite-reducer.git"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
-  "keywords": [
-    "voiceflow",
-    "react",
-    "redux",
-    "react-redux",
-    "reducer",
-    "combinedReducer"
-  ],
   "devDependencies": {
-    "@voiceflow/commitlint-config": "^1.1.0",
-    "@voiceflow/eslint-config": "3.2.2",
-    "@voiceflow/git-branch-check": "^1.2.0",
+    "@commitlint/cli": "^11.0.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^9.0.0",
+    "@voiceflow/commitlint-config": "^1.0.2",
+    "@voiceflow/eslint-config": "^3.1.0",
+    "@voiceflow/git-branch-check": "^1.1.3",
     "@voiceflow/prettier-config": "^1.0.5",
     "@voiceflow/semantic-release-config": "^1.0.8",
-    "@voiceflow/stylelint-config": "^1.0.0",
     "@voiceflow/tsconfig": "^1.0.0",
     "@zerollup/ts-transform-paths": "^1.7.18",
-    "eslint": "^6.7.2",
-    "prettier": "^1.18.2",
-    "ttypescript": "^1.5.10",
-    "typescript": "^3.9.6"
+    "chai": "^4.3.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "depcheck": "^1.4.2",
+    "eslint": "^7.20.0",
+    "fixpack": "^4.0.0",
+    "husky": "^4.3.8",
+    "istanbul": "^0.4.5",
+    "lint-staged": "^10.5.4",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "source-map-support": "^0.5.19",
+    "ts-mocha": "^8.0.0",
+    "ts-node": "^9.1.1",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.4.2"
   },
   "files": [
     "build/"
   ],
-  "prettier": "@voiceflow/prettier-config",
-  "author": "",
+  "homepage": "https://github.com/voiceflow/composite-reducer#readme",
+  "keywords": [
+    "combinedReducer",
+    "react",
+    "react-redux",
+    "reducer",
+    "redux",
+    "voiceflow"
+  ],
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/voiceflow/composite-reducer/issues"
+  "main": "build/index.js",
+  "prettier": "@voiceflow/prettier-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceflow/composite-reducer.git"
   },
-  "homepage": "https://github.com/voiceflow/composite-reducer#readme"
+  "scripts": {
+    "build": "yarn clean && ttsc --project ./tsconfig.build.json --declaration",
+    "clean": "rimraf build",
+    "commit": "cz",
+    "lint": "eslint '**/*.{js,ts}'",
+    "lint:quiet": "yarn lint --quiet",
+    "lint:report": "yarn lint --format json -o sonar/report.json",
+    "test": "yarn test:run",
+    "test:dependencies": "depcheck",
+    "test:integration": "NODE_ENV=test nyc --report-dir nyc_coverage_integration ts-mocha --paths --config ./config/test/.mocharc.yml 'test/**/*.it.ts'",
+    "test:run": "NODE_ENV=test nyc ts-mocha --paths --config ./config/test/.mocharc.yml 'test/**/*.{unit,it}.ts'",
+    "test:single": "NODE_ENV=test ts-mocha --paths --config ./config/test/.mocharc.yml",
+    "test:unit": "NODE_ENV=test nyc --report-dir=nyc_coverage_unit ts-mocha --paths --config ./config/test/.mocharc.yml 'test/**/*.unit.ts'"
+  },
+  "types": "build/index.d.ts"
 }
