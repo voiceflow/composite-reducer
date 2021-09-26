@@ -1,7 +1,7 @@
 {
   "name": "composite-reducer",
   "description": "combine reducers based on individual properties",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "author": "Tyler Han, Ben Teichman",
   "bugs": {
     "url": "https://github.com/voiceflow/composite-reducer/issues"
