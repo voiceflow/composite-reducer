@@ -1,5 +1,4 @@
 {
-  extends: "@voiceflow/semantic-release-config",
   branches: [
       master
     ]

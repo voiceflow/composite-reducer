@@ -13,7 +13,6 @@
     "@commitlint/*",
     "@types/*",
     "@voiceflow/commitlint-config",
-    "@voiceflow/semantic-release-config",
     "@voiceflow/git-branch-check",
     "@voiceflow/tsconfig",
     "eslint-import-resolver-typescript",
