@@ -1,4 +1,4 @@
-Compsite Reducer
+Composite Reducer
 =========================
 
 [![npm version](https://img.shields.io/npm/v/composite-reducer.svg?style=flat-square)](https://www.npmjs.com/package/composite-reducer)
