@@ -16,6 +16,8 @@ jobs:
           run_in_background: true
       - vfcommon/dependency_tests:
           run_in_background: true
+      - vfcommon/unit_tests:
+          run_in_background: true
       - vfcommon/integration_tests:
           wait: true
 
