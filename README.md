@@ -1,3 +1,6 @@
+> [!CAUTION]
+> Update Nov 26, 2025: This codebase has moved to [voiceflow/oss](https://github.com/voiceflow/oss/tree/master/libs/composite-reducer).
+
 Composite Reducer
 =========================
 
